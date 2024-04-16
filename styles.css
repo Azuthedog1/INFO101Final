@@ -1,1 +1,81 @@
+p {
+	color:black;
+	text-align: center;
+}
+
+body {
+  /*background-color: lightpink;*/
+  background: linear-gradient(to right, #6495ED, #FFB6C1);
+  font-family: 'Georgia', Serif;
+}
+
+.mainHeading1 {
+	display: inline-block;
+    /*background-color: gold;*/
+    color: black;
+    padding: 0px 5px;
+    margin: 0;
+}
+.heading-container {
+      text-align: center;
+      margin-top: 20%;
+    }
+
+/* Center the button container horizontally */
+.button-container {
+  
+  margin-top: 2%;
+  margin-left: 42%;
+}
+
+.start-button {
+	font-family: 'Georgia', Serif;
+	padding: 15px 30px; /* Adjust padding to increase button size */
+	font-size: 18px; /* Increase font size */
+}
+
+.p-subtext{
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.questions{
+  color:black;
+  text-align: center;
+  margin-top: 5%;
+  font-size:3vw;
+  border-radius: 5px;
+}
+
+/*Trying to get a list with check boxes*/
+
+/* Style for the custom radio buttons */
+.container {
+  display: block;
+  margin: 0 auto; /* Center the radio boxes horizontally */
+  cursor: pointer;
+  font-size: 2.5vw;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color to the word */
+.highlightable:hover {
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+/* Increase font size for radio buttons and text */
+.container input[type="radio"] {
+  transform: scale(1.5); /* Increase radio button size */
+  margin-right: 5px; /* Adjust spacing between radio button and text */
+}
+.radio-container {
+  margin-left: 42%;
+
+  flex-direction: column; /* Align items in a row */
+}
+
+
+
 
