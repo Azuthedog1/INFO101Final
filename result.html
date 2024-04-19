@@ -1,11 +1,141 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-	<div class="questions">
-		<p> Result: </p>
-	</div>
+    <div class="questions">
+        <p id="resultHeader">Your suggested game result: </p>
+        <p id="result"></p>
+        <p id="customParagraph"></p>
+    </div>
+
+    <script>
+        // Function to retrieve the values from localStorage
+        function retrieveValues() {
+            storytelling = parseInt(localStorage.getItem('storytelling')) || 0;
+            sport = parseInt(localStorage.getItem('sport')) || 0;
+            simulation = parseInt(localStorage.getItem('simulation')) || 0;
+            action = parseInt(localStorage.getItem('action')) || 0;
+            strategy = parseInt(localStorage.getItem('strategy')) || 0;
+            shooter = parseInt(localStorage.getItem('shooter')) || 0;
+            survival = parseInt(localStorage.getItem('survival')) || 0;
+            puzzle = parseInt(localStorage.getItem('puzzle')) || 0;
+        }
+
+        // Call the function to retrieve the values
+        retrieveValues();
+
+        // Function to print the results and custom paragraph
+        function printResults() {
+            const resultElement = document.getElementById('result');
+    		const imageContainer = document.querySelector('.image-container');
+    		const customParagraph = document.getElementById('customParagraph');
+
+            /*resultElement.textContent = `Storytelling: ${storytelling}
+            Sport: ${sport}
+            Simulation: ${simulation}
+            Action: ${action}
+            Strategy: ${strategy}
+            Shooter: ${shooter}
+            Survival: ${survival}
+            Puzzle: ${puzzle}`;*/
+
+            const maxCount = Math.max(storytelling, sport, simulation, action, strategy, shooter, survival, puzzle);
+            let customText = '';
+			let paragraph1 = '';
+			let paragraph2 = '';
+			const photo = document.createElement('img');
+			let gamelists = {
+				"storytelling": ["The Last of Us", "Red Dead Redemption", "Life is Strange", "Firewatch", "Detroit: Become Human"],
+				"sport": ["Just Dance", "Wii Sports", "Forza Horizon 5", "UFC", "WWE"],
+				"simulation": ["Powerwashing Simulator", "PC Building Simulator", "Cities: Skylines", "Microsoft Flight Simulator", "Goat Simulator"],
+				"action": ["Grand Theft Auto", "Assassin's Creed", "Elden Ring", "Control", "Spider-Man"],
+				"strategy": ["Board Games", "Card Games", "Stratego", "Civilization 5", "XCOM"],
+				"shooter": ["Call of Duty", "Fortnite", "Valorant", "Destiny", "CS:GO"],
+				"survival": ["Minecraft", "Raft", "Rust", "The Forest", "Subnautica"],
+				"puzzle": ["Portal", "ABCMouse", "The Witness", "Outer Wilds", "The Oregon Trail"]
+			};
+
+            if (maxCount === storytelling) {
+                customText = 'Storytelling Games!';
+				paragraph1 = 'Immersed in the rich tapestry of narratives, the storyteller gamer enjoys intricate plots, dynamic characters, and captivating worlds. They seek out games where storytelling takes center stage, where every choice made weaves a new thread into the fabric of the narrative. Whether it\'s traversing the vast landscapes of epic adventures, navigating the moral dilemmas of choice-driven dramas, or unraveling the mysteries of interactive fiction, the storyteller gamer finds fulfillment in the power of narrative to evoke emotion, provoke thought, and transport them to realms limited only by imagination. For them, the true joy lies not just in completing a game, but in crafting and experiencing a story that resonates deeply within their soul.';
+				paragraph2 = 'Here are some storytelling games you might enjoy: ' + gamelists.storytelling.join(", ");
+            } else if (maxCount === sport) {
+                customText = 'Sports and Exercise Games!';
+				paragraph1 = 'Dedicated to the pursuit of physical activity and competitive spirit, the Sport/Exercise gamer thrives in virtual arenas where athleticism and strategy collide. They enjoy games that simulate the exhilaration of real-life sports, whether it\'s racing against the clock in virtual marathons, perfecting their swing in digital golf courses, or mastering the art of hand-to-hand combat in motion-controlled simulations. For them, gaming is a means of staying active, honing skills, and fostering a sense of accomplishment through physical exertion. Every session becomes a workout, every victory a testament to their dedication to both gaming and fitness. Whether solo or competing with friends, the sport and exercise gamer finds joy in the fusion of virtual play and real-world athleticism, pushing their limits and embracing the thrill of the game.';
+				paragraph2 = 'Here are some sports games you might enjoy: ' + gamelists.sport.join(", ");
+				photo.src = "sport.jpg";
+				photo.alt = 'Photo of soccer ball being kicked';
+				photo.classList.add('sport-photo');
+            } else if (maxCount === simulation) {
+                customText = 'Simulation Games!';
+				paragrap1 = 'The simulation gamer is a master of virtual reality and intricate systems. They are drawn to games that offer a faithful replication of real-life scenarios, whether it\'s managing a bustling city, piloting aircraft through turbulent skies, or cultivating crops on a digital farm. The allure lies in the opportunity to explore, experiment, and problem-solve within carefully crafted simulations, Whether meticulously planning the layout of a metropolis or fine-tuning the performance of a virtual race car, the simulation gamer finds satisfaction in the pursuit of realism and the endless possibilities of simulated worlds. Each session is a journey of discovery, as they immerse themselves in the complexities of virtual environments and strive to create their own utopias.';
+				paragraph2 = 'Here are some simulation games you might enjoy: ' + gamelists.simulation.join(", ");
+            } else if (maxCount === action) {
+                customText = 'Action Games!';
+				paragraph1 = 'The action gamer is a thrill-seeker and drawn to the pulse-pounding excitement of gameplay. They seek out games where every moment is a test of skill and speed, whether it\'s engaging in intense firefights, navigating perilous obstacles, or executing lightning-fast combos in hand-to-hand combat. Gaming is an electrifying escape into worlds where danger lurks around every corner and the next challenge is always just a heartbeat away. Whether they\'re single-handedly taking on hordes of enemies or competing against friends in frenetic multiplayer showdowns, the action gamer thrives on the rush of adrenaline and the satisfaction of emerging victorious against all odds.';
+				paragraph2 = 'Here are some action games you might enjoy: ' + gamelists.action.join(", ");
+            } else if (maxCount === strategy) {
+                customText = 'Strategic Games!';
+				paragraph1 = 'The strategy gamer is a master of planning, foresight, and cunning maneuvers in the digital battlefield. They are drawn to games that challenge their intellect and strategic prowess, whether it\'s commanding vast armies in epic conflicts, building thriving civilizations from the ground up, or outmaneuvering opponents in intricate tactical encounters. For them, gaming is a cerebral pursuit, where every decision carries weight and every move is a calculated gambit toward victory. Whether they\'re devising elaborate long-term strategies or adapting to ever-changing circumstances on the fly, the strategy gamer thrives on the challenge of outwitting their opponents and conquering obstacles through sheer strategic brilliance. Every session is a test of wit and ingenuity, as they immerse themselves in the complexities of strategic gameplay and strive to emerge triumphant through superior planning and execution.';
+				paragraph2 = 'Here are some strategic games you might enjoy: ' + gamelists.strategy.join(", ");
+            } else if (maxCount === shooter) {
+                customText = 'Shooter Games!';
+				paragraph1 = 'The shooter gamer is a virtuoso of precision, reflexes, and tactical prowess. They are drawn to games where split-second decisions and lightning-fast reactions determine success, whether it\'s engaging in pulse-pounding firefights, executing pinpoint accuracy with a variety of weapons, or coordinating with teammates in intense multiplayer battles. Sharp-shooter gaming is an adrenaline-fueled rush, where every encounter is a thrilling test of skill and marksmanship. Whether they\'re dominating the leaderboard in fast-paced multiplayer matches or immersing themselves in the gripping narratives of single-player campaigns, the gamer thrives on the thrill of the hunt and the satisfaction of hitting their targets with deadly precision. Every session is a high-stakes showdown, as they hone their reflexes and strategy to become the ultimate sharpshooter in the arena.';
+				paragraph2 = 'Here are some shooter games you might enjoy: ' + gamelists.shooter.join(", ");
+            } else if (maxCount === survival) {
+                customText = 'Survival Games!';
+				paragraph1 = 'The survival gamer is a master of resourcefulness, adaptation, and resilience in the unforgiving landscapes of digital wilderness. They are drawn to games where every decision matters, where they must scavenge for supplies, fend off threats, and navigate treacherous terrain to endure and thrive. Whether it\'s crafting makeshift shelters, foraging for food, or braving the elements, the survival gamer revels in the thrill of overcoming adversity and carving out their place in harsh digital worlds. Whether they\'re exploring procedurally generated environments or competing against the elements and other players in multiplayer arenas, the gamer thrives on the tension of precarious existence and the satisfaction of survival against the odds. Every session is a test of resilience and ingenuity.';
+				paragraph2 = 'Here are some survival games you might enjoy: ' + gamelists.survival.join(", ");
+            } else if (maxCount === puzzle) {
+                customText = 'Puzzle and Educational games!';
+				paragraph1 = 'The puzzle gamer is dedicated to expanding their understanding and skills through the interactive medium of video games. They are drawn to games that offer meaningful insights, practical lessons, and engaging challenges, whether it\'s exploring historical events, mastering mathematical concepts, or developing language proficiency. Gaming is not just entertainment, but a powerful tool for personal growth and enrichment. Whether they\'re delving into interactive simulations, solving puzzles that stimulate critical thinking, or immersing themselves in virtual environments that foster creativity and exploration, the educational gamer thrives on the opportunity to learn while they play. Every session is an opportunity to expand their horizons, acquire new skills, and unlock the potential of interactive learning in the digital age.';
+				paragraph2 = 'Here are some puzzle and educational games you might enjoy: ' + gamelists.puzzle.join(", ");
+				photo.src = "puzzles.jpg";
+				photo.alt = 'Photo of puzzle pieces';
+				photo.classList.add('puzzle-photo');
+				
+            }
+
+			const container = document.createElement('div');
+
+			// Add paragraph1 to the container
+			container.appendChild(customParagraph);
+
+			// Create paragraph element for paragraph2
+			const customTextElement = document.createElement('p');
+			customTextElement.textContent = customText;
+
+			// Create paragraph element for paragraph2
+			const paragraph1Element = document.createElement('p');
+			paragraph1Element.textContent = paragraph1;
+
+			// Append paragraph1 before paragraph2
+			container.appendChild(customTextElement);
+
+			// Append the photo to the container
+			container.appendChild(photo);
+
+			// Append paragraph1 before paragraph2
+			container.appendChild(paragraph1Element);
+
+			// Create paragraph element for paragraph2
+			const paragraph2Element = document.createElement('p');
+			paragraph2Element.textContent = paragraph2;
+
+			// Append paragraph2 after the photo
+			container.appendChild(paragraph2Element);
+
+			// Replace the existing content in the result element with the container
+			resultElement.innerHTML = '';
+			resultElement.appendChild(container);
+        }	
+
+        // Call the function to print the results
+        printResults();
+    </script>
 </body>
+</html>
