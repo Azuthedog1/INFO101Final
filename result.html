@@ -119,7 +119,9 @@
             }
 
 			const container = document.createElement('div');
-
+			const paragraph1FontSize = '0.6em';
+			const paragraph2FontSize = '0.8em';
+		
 			// Add paragraph1 to the container
 			container.appendChild(customParagraph);
 
@@ -131,6 +133,9 @@
 			const paragraph1Element = document.createElement('p');
 			paragraph1Element.textContent = paragraph1;
 
+			// Apply CSS styling to make the text smaller
+			paragraph1Element.style.fontSize = paragraph1FontSize;
+			
 			// Append paragraph1 before paragraph2
 			container.appendChild(customTextElement);
 
@@ -144,6 +149,9 @@
 			const paragraph2Element = document.createElement('p');
 			paragraph2Element.textContent = paragraph2;
 
+
+			paragraph2Element.style.fontSize = paragraph2FontSize;
+		
 			// Append paragraph2 after the photo
 			container.appendChild(paragraph2Element);
 
