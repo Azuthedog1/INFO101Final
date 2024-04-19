@@ -1,41 +1,45 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-	<div class="questions">
-		<p>
-		Question 7: How much do you play video games currently?
-		</p>
-	</div>
+  <div class="questions">
+    <p>
+      Question 7: How much do you play video games currently?
+    </p>
+  </div>
   <form class="radio-container">
     <label class="container" for="Not at all">
-      <input type="radio" id="Not at all" name="free_time" value="Not at all">
+      <input type="radio" id="Not at all" name="video_games" value="Not at all" onclick="trackResponse('puzzle')">
       <span class="highlightable">Not at all</span>
     </label>
     <label class="container" for="Occasionally">
-      <input type="radio" id="Occasionally" name="free_time" value="Occasionally">
+      <input type="radio" id="Occasionally" name="video_games" value="Occasionally" onclick="trackResponse('shooter')">
       <span class="highlightable">Occasionally</span>
     </label>
     <label class="container" for="Sometimes">
-      <input type="radio" id="Sometimes" name="free_time" value="Sometimes">
+      <input type="radio" id="Sometimes" name="video_games" value="Sometimes" onclick="trackResponse('strategy')">
       <span class="highlightable">Sometimes</span>
     </label>
-        <label class="container" for="Often">
-      <input type="radio" id="Often" name="free_time" value="Often">
+    <label class="container" for="Often">
+      <input type="radio" id="Often" name="video_games" value="Often" onclick="trackResponse('storytelling')">
       <span class="highlightable">Often</span>
     </label>
-        <label class="container" for="Very often">
-      <input type="radio" id="Very often" name="free_time" value="Very often">
+    <label class="container" for="Very often">
+      <input type="radio" id="Very often" name="video_games" value="Very often" onclick="trackResponse('survival')">
       <span class="highlightable">Very often</span>
     </label>
   </form> 
   <div class="button-container">
-<!-- Button element -->
-  <a href="q8.html">
-    <button class="start-button"> Next Question </button>
-  </a>
-</div>
+    <!-- Button element -->
+    <a href="q8.html">
+      <button class="start-button" onclick="validateSelection()"> Next Question </button>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>

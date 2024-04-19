@@ -1,41 +1,45 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-	<div class="questions">
-		<p>
-		Question 3: What do you study?
-		</p>
-	</div>
+  <div class="questions">
+    <p>
+      Question 3: What do you study?
+    </p>
+  </div>
   <form class="radio-container">
     <label class="container" for="Communications">
-      <input type="radio" id="Communications" name="free_time" value="Communications">
+      <input type="radio" id="Communications" name="field_of_study" value="Communications" onclick="trackResponse('action')">
       <span class="highlightable">Communications</span>
     </label>
     <label class="container" for="STEM">
-      <input type="radio" id="STEM" name="free_time" value="STEM">
+      <input type="radio" id="STEM" name="field_of_study" value="STEM" onclick="trackResponse('survival')">
       <span class="highlightable">STEM</span>
     </label>
     <label class="container" for="Fine Arts">
-      <input type="radio" id="Fine Arts" name="free_time" value="Fine Arts">
+      <input type="radio" id="Fine Arts" name="field_of_study" value="Fine Arts" onclick="trackResponse('storytelling')">
       <span class="highlightable">Fine Arts</span>
     </label>
-        <label class="container" for="Business">
-      <input type="radio" id="Business" name="free_time" value="Business">
+    <label class="container" for="Business">
+      <input type="radio" id="Business" name="field_of_study" value="Business" onclick="trackResponse('sport')">
       <span class="highlightable">Business</span>
     </label>
-        <label class="container" for="Natural Sciences">
-      <input type="radio" id="Natural Sciences" name="free_time" value="Natural Sciences">
+    <label class="container" for="Natural Sciences">
+      <input type="radio" id="Natural Sciences" name="field_of_study" value="Natural Sciences" onclick="trackResponse('simulation')">
       <span class="highlightable">Natural Sciences</span>
     </label>
   </form> 
   <div class="button-container">
-<!-- Button element -->
-  <a href="q4.html">
-    <button class="start-button"> Next Question </button>
-  </a>
-</div>
+    <!-- Button element -->
+    <a href="q4.html">
+      <button class="start-button" onclick="validateSelection()"> Next Question </button>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>

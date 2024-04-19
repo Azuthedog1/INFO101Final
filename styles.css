@@ -3,11 +3,14 @@ p {
 	text-align: center;
 }
 
+
+
 body {
   /*background-color: lightpink;*/
   background: linear-gradient(to right, #6495ED, #FFB6C1);
   font-family: 'Georgia', Serif;
 }
+
 
 .mainHeading1 {
 	display: inline-block;
@@ -81,10 +84,19 @@ body {
   max-height: 20%;
 }
 
-
 .sport-photo {
   max-width: 20%;
   max-height: 20%;
+}
+
+.forest-photo {
+  max-width: 30%;
+  max-height: 30%;
+}
+
+.action-photo{
+  max-width: 25%;
+  max-height: 25%;
 }
 /* 
   max-width: 100%;

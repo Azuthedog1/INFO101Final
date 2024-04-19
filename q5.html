@@ -12,30 +12,30 @@
 	</div>
   <form class="radio-container">
     <label class="container" for="Biking">
-      <input type="radio" id="Biking" name="free_time" value="Biking">
+      <input type="radio" id="Biking" name="free_time" value="Biking" onclick="trackResponse('action')">
       <span class="highlightable">Biking</span>
     </label>
     <label class="container" for="Swimming">
-      <input type="radio" id="Swimming" name="free_time" value="Swimming">
+      <input type="radio" id="Swimming" name="free_time" value="Swimming" onclick="trackResponse('puzzle')">
       <span class="highlightable">Swimming</span>
     </label>
     <label class="container" for="Archery ">
-      <input type="radio" id="Archery " name="free_time" value="Archery ">
+      <input type="radio" id="Archery " name="free_time" value="Archery" onclick="trackResponse('shooter')">
       <span class="highlightable">Archery </span>
     </label>
         <label class="container" for="Running">
-      <input type="radio" id="Running" name="free_time" value="Running">
+      <input type="radio" id="Running" name="free_time" value="Running" onclick="trackResponse('simulation')">
       <span class="highlightable">Running</span>
     </label>
         <label class="container" for="Playing a sport">
-      <input type="radio" id="Playing a sport" name="free_time" value="Playing a sport">
+      <input type="radio" id="Playing a sport" name="free_time" value="Playing a sport" onclick="trackResponse('sport')">
       <span class="highlightable">Playing a sport</span>
     </label>
   </form> 
   <div class="button-container">
 <!-- Button element -->
   <a href="q6.html">
-    <button class="start-button"> Next Question </button>
+    <button class="start-button" onclick="validateSelection()"> Next Question </button>
   </a>
 </div>
 </body>

@@ -1,41 +1,45 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-	<div class="questions">
-		<p>
-		Question 8: How important are character design and customization to you?
-		</p>
-	</div>
+  <div class="questions">
+    <p>
+      Question 8: How important are character design and customization to you?
+    </p>
+  </div>
   <form class="radio-container">
     <label class="container" for="Not important at all">
-      <input type="radio" id="Not important at all" name="free_time" value="Not important at all">
+      <input type="radio" id="Not important at all" name="importance" value="Not important at all" onclick="trackResponse('puzzle')">
       <span class="highlightable">Not important at all</span>
     </label>
     <label class="container" for="A little important">
-      <input type="radio" id="A little important" name="free_time" value="A little important">
+      <input type="radio" id="A little important" name="importance" value="A little important" onclick="trackResponse('survival')">
       <span class="highlightable">A little important</span>
     </label>
     <label class="container" for="Somewhat important">
-      <input type="radio" id="Somewhat important" name="free_time" value="Somewhat important">
+      <input type="radio" id="Somewhat important" name="importance" value="Somewhat important" onclick="trackResponse('sport')">
       <span class="highlightable">Somewhat important</span>
     </label>
-        <label class="container" for="Important">
-      <input type="radio" id="Important" name="free_time" value="Important">
+    <label class="container" for="Important">
+      <input type="radio" id="Important" name="importance" value="Important" onclick="trackResponse('shooter')">
       <span class="highlightable">Important</span>
     </label>
-        <label class="container" for="Very important">
-      <input type="radio" id="Very important" name="free_time" value="Very important">
+    <label class="container" for="Very important">
+      <input type="radio" id="Very important" name="importance" value="Very important" onclick="trackResponse('storytelling')">
       <span class="highlightable">Very important</span>
     </label>
   </form> 
   <div class="button-container">
-<!-- Button element -->
-  <a href="result.html">
-    <button class="start-button"> Finish Quiz </button>
-  </a>
-</div>
+    <!-- Button element -->
+    <a href="result.html">
+      <button class="start-button" onclick="validateSelection()"> Finish Quiz </button>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>

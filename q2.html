@@ -1,41 +1,45 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-	<div class="questions">
-		<p>
-		Question 2: What kind of movies/books/media do you enjoy?
-		</p>
-	</div>
+  <div class="questions">
+    <p>
+      Question 2: What kind of movies/books/media do you enjoy?
+    </p>
+  </div>
   <form class="radio-container">
     <label class="container" for="Action">
-      <input type="radio" id="Action" name="free_time" value="Action">
+      <input type="radio" id="Action" name="free_time" value="Action" onclick="trackResponse('action')">
       <span class="highlightable">Action</span>
     </label>
     <label class="container" for="Horror">
-      <input type="radio" id="Horror" name="free_time" value="Horror">
+      <input type="radio" id="Horror" name="free_time" value="Horror" onclick="trackResponse('survival')">
       <span class="highlightable">Horror</span>
     </label>
     <label class="container" for="Comedy">
-      <input type="radio" id="Comedy" name="free_time" value="Comedy">
+      <input type="radio" id="Comedy" name="free_time" value="Comedy" onclick="trackResponse('storytelling')">
       <span class="highlightable">Comedy</span>
     </label>
-        <label class="container" for="Romance">
-      <input type="radio" id="Romance" name="free_time" value="Romance">
+    <label class="container" for="Romance">
+      <input type="radio" id="Romance" name="free_time" value="Romance" onclick="trackResponse('strategy')">
       <span class="highlightable">Romance</span>
     </label>
-        <label class="container" for="Nonfiction">
-      <input type="radio" id="Nonfiction" name="free_time" value="Nonfiction">
+    <label class="container" for="Nonfiction">
+      <input type="radio" id="Nonfiction" name="free_time" value="Nonfiction" onclick="trackResponse('puzzle')">
       <span class="highlightable">Nonfiction</span>
     </label>
   </form> 
   <div class="button-container">
-<!-- Button element -->
-  <a href="q3.html">
-    <button class="start-button"> Next Question </button>
-  </a>
-</div>
+    <!-- Button element -->
+    <a href="q3.html">
+      <button class="start-button" onclick="validateSelection()"> Next Question </button>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>
