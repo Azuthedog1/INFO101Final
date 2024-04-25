@@ -1,3 +1,28 @@
+
+function clearVariable() {
+  storytelling = 0;
+  sport = 0;
+  simulation = 0;
+  action = 0;
+  strategy = 0;
+  shooter = 0;
+  survival = 0;
+  puzzle = 0;
+  localStorage.setItem('storytelling', storytelling);
+  localStorage.setItem('sport', sport);
+  localStorage.setItem('simulation', simulation);
+  localStorage.setItem('action', action);
+  localStorage.setItem('strategy', strategy);
+  localStorage.setItem('shooter', shooter);
+  localStorage.setItem('survival', survival);
+  localStorage.setItem('puzzle', puzzle);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Event listener for the button click
+  document.getElementById("clearButton").addEventListener("click", clearVariable);
+});
+
 // Function to track the response and update the count
 function trackResponse(tag) {
   switch (tag) {
